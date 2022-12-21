@@ -7,17 +7,12 @@ header, footer{
 }
 header {
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#6b154d+0,e5e5e5+100 */
-background: #6b154d; /* Old browsers */
-background: -moz-linear-gradient(top,  #6b154d 0%, #e5e5e5 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #6b154d 0%,#e5e5e5 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #6b154d 0%,#e5e5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b154d', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-
+background: #3b98c4;
 }
 
 .btn-primary{
 
-    background-color: #490957;
+    background-color: #4c668d;
     
     color: white;
     

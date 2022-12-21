@@ -2,6 +2,6 @@
 {% block title %}Custom 404{% endblock %}
 {% block content %}
   <h1>Custom 404</h1>
-  <p>Ой ой ой ты что то попутал, тут нет Страницы с адресом {{ path }} </p>
-  <a href="{% url 'posts:index' %}">Идите на главную</a>
+  <p>Страница не найдена {{ path }} </p>
+  <a href="{% url 'posts:index' %}">Перейти на главную</a>
 {% endblock %} 
