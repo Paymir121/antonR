@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Войти{% endblock %}
+{% block content %}
+{% with card_header='Вход' card_body='Вы пытаетесь войти, ведите свой логин и пароль' %}
+    {% include 'users/includes/card.html' %}
+    {% endwith %}
+    {% include 'includes/error.html' %}
+
+    <form method="post"
+      {% if action_url %}
+        <form method="post" action="{% url 'posts:index' %}"
+      {% endif %}>
+      {% include 'includes/form.html' %}
+      <div class="col-md-6 offset-md-4"> 
+        <button type="submit" class="btn btn-primary"> 
+          Войти 
+        </button> 
+        <a href="{% url 'users:password_reset' %}" class="btn btn-link"> 
+          Забыли пароль? 
+        </a> 
+      </div> 
+    </form> 
+{% endblock %} 
+
+ 

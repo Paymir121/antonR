@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost',
     '127.0.0.1',
     '[::1]',
-    'testserver',]
+    'testserver',
+    ]
 
 
 # Application definition
@@ -40,7 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'build_proj.apps.BuildProjConfig',
+    'sorl.thumbnail',
+    'about.apps.AboutConfig',
+    'core.apps.CoreConfig',
+    'users.apps.UsersConfig',
+    'posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +132,8 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+PAGINATION_SIZE: int = 10
 
 CACHES = {
     'default': {

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block title %}Лучшие посты{% endblock title %}
+{% block content %}
+{% include 'posts/includes/switcher.html' %}
+    {{max_like}}
+    {% for post in page_obj %}
+    {% include 'posts/includes/post_list.html' %}
+        {% if post.group %}
+          <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
+        {% endif %}
+      </article>
+      {% if not forloop.last %}<hr>{% endif %}
+      {{max_like}}
+    {% endfor %}
+  {% include 'includes/paginator.html' %}
+{% endblock %} 

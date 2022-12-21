@@ -1,0 +1,52 @@
+
+{% load user_filters %}
+{% load thumbnail %}
+{% if user.is_authenticated %}
+  <div class="card my-4">
+    <h5 class="card-header">Добавить фотографии</h5>
+    <div class="card-body">
+      <form_image method="post" action="{% url 'posts:add_photo' post.id %}">
+        {% csrf_token %}      
+        <div class="form-group mb-2">
+          {{ form.image}}
+        </div>
+        <button type="submit" class="btn btn-primary">добавить</button>
+      </form_image>
+    </div>
+  </div>
+{% endif %}
+
+{% for field in form_image %}
+    <div class="form-group row my-3 p-3"
+    {% if field.field.required %}
+        aria-required="true"
+    {% else %}
+        aria-required="false"
+    {% endif %}
+    >
+    <label for="{{ field.id_for_label }}">
+        {{ field.label }}
+        {% if field.field.required %}
+            <span class="required text-danger">*</span>
+        {% endif %}
+    </label>
+    <div>
+        {{ field|addclass:'form-control' }}
+        {% if field.help_text %}
+            <small id="{{ field.id_for_label }}-help" class="form-text text-muted">
+            {{ field.help_text|safe }}
+            </small>
+        {% endif %}
+    </div>
+    </div>
+{% endfor %}
+
+{% for photo in photo_all %}
+  <div class="media mb-4">
+    <div class="media-body">
+      {% thumbnail post.image "960x339" crop="center" upscale=True as im %}
+        <img class="card-img my-2" src="{{ im.url }}">
+      {% endthumbnail %}
+    </div>
+  </div>
+{% endfor %}
