@@ -35,9 +35,11 @@ def group_posts(request, slug):
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     author_post = post.author.posts.count()
+    image_all = post.images.all() 
     template = 'posts/post_detail.html'
     context = {
         'post': post,
         'author_post': author_post,
+        'image_all': image_all,
     }
     return render(request, template, context)

@@ -8,7 +8,7 @@
     {% include 'posts/includes/post_list.html' %}
       {{post.count}}
         {% if post.group %}
-          <a href="{% url 'posts:group_list' post.group.slug %}">Все проекты</a>
+          <a href="{% url 'posts:group_list' post.group.slug %}">Все проекты данного типа</a>
         {% endif %}
       {% if not forloop.last %}<hr>{% endif %}
     {% endfor %}

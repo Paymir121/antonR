@@ -1,0 +1,15 @@
+{% load thumbnail %} 
+{% for image in image_all %} 
+<img src="{{ image.image.url }}" class="image-detail">
+</br>
+  {% comment %} <div class="media mb-4"> 
+    <div class="media-body"> 
+      <h5 class="mt-0"> 
+        {% thumbnail image.image   crop="center" upscale=True as im %} 
+          <img class="card-img my-2" src="{{ im.url }}"> 
+        {% endthumbnail %} 
+        </a> 
+      </h5> 
+    </div> 
+  </div>  {% endcomment %}
+{% endfor %} 
