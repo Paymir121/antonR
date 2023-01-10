@@ -3,15 +3,8 @@
 {% block title %}Пост {{post.text|truncatechars:30 }} от {{post.pub_date|date:"d E Y"}} {% endblock title %}
 {% block content %}
   <div class="row">
-    <aside class="col-12 col-md-3">
-      <ul class="list-group list-group-flush">
-        {% if post.group %}
-          <li class="list-group-item">
-            Группа:
-            <a  href="{% url 'posts:group_list' post.group.slug %}">{{post.group}} </a>
-          </li>
-        {% endif %}
-    </aside>
+    <div class="row">
+    {%if post.title_post%}<h3>{{ post.title_post|truncatechars:100 }}</h3></br>{%endif%}
     <article class="col-12 col-md-9">
       {% thumbnail post.image "960x339" crop="center" upscale=True as im %}
         <img class="card-img my-2" src="{{ im.url }}">
@@ -20,6 +13,17 @@
         {{post.text}}
       </p>
     </article>
+
+      {% if post.group %}
+              <form method="post" action="{% url 'posts:group_list' post.group.slug  %}">
+                {% csrf_token %}
+                <div  style=" width: 230px; height: 50px;">
+                  <button class='btn btn-success'  type="submit" >
+                    Все проекты данного типа
+                  </button>
+                </div>
+              </form>
+      {% endif %}
     {% include 'posts/includes/image.html' %} 
   </div>
 {% endblock %}

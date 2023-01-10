@@ -152,6 +152,10 @@ class Image(CreatedModel):
         null=True,
         blank=True,
     )
+    text = models.TextField(
+        'Описание картинки',
+        help_text='текст под картинкой'
+    )
 
     class Meta:
         verbose_name = 'Картинка'

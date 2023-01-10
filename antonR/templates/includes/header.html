@@ -1,53 +1,40 @@
 {% load static %}
 <header>
-  <nav class="navbar navbar-dark navbar-white">
-      <div class="container">
-        
-        <a class="navbar-brand" href="{% url 'posts:index' %}">
-          <img src="{% static 'img/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-          <span style="color:red">Лого</br>
-        </a>
-        
-        {% with request.resolver_match.view_name as view_name %}
-        <ul class="nav nav-pills">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="{% static 'img/icons8-redux-250.svg' %}" width="55" height="55" class="d-inline-block align-top" alt="">
+      <a class="navbar-brand" href="{% url 'posts:index' %}">Лого</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="sr-only">Меню</span>
+      </button>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
           <li class="nav-item">
-            <a 
-              class="nav-link {% if view_name  == 'posts:index' %}active{% endif %}"
-              href="{% url 'posts:index' %}"
-              >
-                Все проекты
-              </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {% if view_name  == 'about:author' %}active{% endif %}"
-                   href="{% url 'about:author' %}"
-                >
-                  Об авторе
-                </a>
-            </li>
-            <li class="nav nav-pills">
-                <a class="nav-link {% if view_name  == 'about:tech' %}active{% endif %}"
-                href="{% url 'about:tech' %}"
-                >
-                Сертификаты
+            <a class="nav-link active" href="{% url 'posts:index' %}">Все проекты
+              <span class="visually-hidden">(current)</span>
             </a>
-            </li>
-        {% if request.user.is_authenticated %}
-          <li class="nav-item">
-                <a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}"
-                href="{% url 'users:logout'%}"
-                >
-                Выйти</a>
           </li>
-          {% else %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="{% url 'posts:index' %}" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'posts:index' %}">Рестораны</a>
+              <a class="dropdown-item" href="{% url 'posts:index' %}">Школы</a>
+              <a class="dropdown-item" href="{% url 'posts:index' %}">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'posts:index' %}">Separated link</a>
+            </div>
           <li class="nav-item">
-                <a class="nav-link {% if view_name  == 'users:login' %}active{% endif %}"
-                href="{% url 'users:login'%}"
-                >
-                Войти</a>
+            <a class="nav-link" href="{% url 'about:tech' %}">Сертификаты</a>
           </li>
-          {% endif %}
-        {% endwith %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about:author' %}"> Об авторе</a>
+          </li>
+        </ul>
+
       </div>
-    </nav>
+    </div>
+  </nav>
   </header>
+
+  

@@ -29,6 +29,8 @@ ALLOWED_HOSTS = ['localhost',
     '127.0.0.1',
     '[::1]',
     'testserver',
+    'www.nikox12.pythonanywhere.com',
+    'nikox12.pythonanywhere.com',
     ]
 
 
