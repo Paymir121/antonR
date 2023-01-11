@@ -2,6 +2,7 @@
 {% load thumbnail %}
 {% block title %}Group Page{% endblock title %}
 {% block content %}
+{% include 'posts/includes/switcher.html' %}
   <h1>{{ group.title }}</h1>
   <p>{{ group.description }}</p>
   {% for post in page_obj %}
