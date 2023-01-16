@@ -45,7 +45,7 @@
       }
     }
     
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
       .topnav.responsive {position: relative;}
       .topnav.responsive .icon {
         position: absolute;
@@ -64,12 +64,12 @@
     
   <div class="topnav" id="myTopnav">
     <a class="navbar-brand" class="active" href="{% url 'posts:index' %}">
-      <img src="{% static 'img/icons8-redux-250.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="{% static 'img/logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
     <a href="{% url 'posts:index' %}" class="active">Проекты</a>
+    <a href="{% url 'about:tech' %}">Документы</a>
     <a href="{% url 'posts:index' %}" >О компании</a>
     <a href="{% url 'about:author' %}">Контакты</a>
-    <a href="{% url 'about:tech' %}">Сертификаты</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>

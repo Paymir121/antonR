@@ -34,39 +34,6 @@ class GroupAdmin(admin.ModelAdmin):
     empty_value_display = '-пусто-'
 
 
-@admin.register(Follow)
-class FollowAdmin(admin.ModelAdmin):
-    list_display = (
-        'pk',
-        'user',
-        'author',
-    )
-
-    empty_value_display = '-пусто-'
-
-
-@admin.register(Comment)
-class CommentAdmin(admin.ModelAdmin):
-    list_display = (
-        'pk',
-        'post',
-        'author',
-        'text',
-    )
-
-    empty_value_display = '-пусто-'
-
-
-@admin.register(Like)
-class LikeAdmin(admin.ModelAdmin):
-    list_display = (
-        'pk',
-        'post',
-        'author',
-    )
-
-    empty_value_display = '-пусто-'
-
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
