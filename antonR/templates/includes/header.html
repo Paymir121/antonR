@@ -1,64 +1,12 @@
 {% load static %}
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    .topnav {
-      overflow: hidden;
-      background-color: rgb(255, 255, 255);
-    }
-    
-    .topnav a {
-      float: left;
-      display: block;
-      color: #0a0a0a;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 20px;
-    }
-    
-    .topnav a:hover {
-      background-color: #6cc96f;
-      color: rgb(8, 8, 8);
-    }
-    
-    .active {
-      background-color: #6cc96f;
-      color: white;
-    }
-    
-    .topnav .icon {
-      display: none;
-    }
-    
-    @media screen and (max-width: 600px) {
-      .topnav a:not(:first-child) {display: none;}
-      .topnav a.icon {
-        float: right;
-        display: block;
-      }
-    }
-    
-    @media screen and (max-width: 800px) {
-      .topnav.responsive {position: relative;}
-      .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-    }
-  </style>
+  <link rel='stylesheet' id='elementor-frontend-css'  href='https://yusarch.ru/wp-content/uploads/elementor/css/custom-frontend.min.css?ver=1584605997' type='text/css' media='all' />
+    <link rel='stylesheet' id='yusarch_main_css-css'  href='https://yusarch.ru/wp-content/themes/yusarch/assets/css/main.css?ver=5.3.14' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-global-css'  href='https://yusarch.ru/wp-content/uploads/elementor/css/global.css?ver=1584605997' type='text/css' media='all' />
+    <link rel='stylesheet' id='yusarch_fonts-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C600&#038;display=swap&#038;subset=cyrillic&#038;ver=5.3.14' type='text/css' media='all' />
   </head>
   <body>
     
@@ -66,9 +14,10 @@
     <a class="navbar-brand" class="active" href="{% url 'posts:index' %}">
       <img src="{% static 'img/logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
+    <a href="{% url 'about:main' %}">Главная</a>
     <a href="{% url 'posts:index' %}" class="active">Проекты</a>
     <a href="{% url 'about:tech' %}">Документы</a>
-    <a href="{% url 'posts:index' %}" >О компании</a>
+    <a href="{% url 'about:company' %}" >О компании</a>
     <a href="{% url 'about:author' %}">Контакты</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>

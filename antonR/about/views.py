@@ -7,3 +7,9 @@ class PageAboutAuthor(TemplateView):
 
 class PageTech(TemplateView):
     template_name = 'about/tech.html'
+
+class MainPage(TemplateView):
+    template_name = 'about/main.html'
+
+class CompanyPage(TemplateView):
+    template_name = 'about/company.html'
