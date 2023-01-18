@@ -6,10 +6,14 @@
   <link rel='stylesheet' id='elementor-frontend-css'  href='https://yusarch.ru/wp-content/uploads/elementor/css/custom-frontend.min.css?ver=1584605997' type='text/css' media='all' />
     <link rel='stylesheet' id='yusarch_main_css-css'  href='https://yusarch.ru/wp-content/themes/yusarch/assets/css/main.css?ver=5.3.14' type='text/css' media='all' />
     <link rel='stylesheet' id='elementor-global-css'  href='https://yusarch.ru/wp-content/uploads/elementor/css/global.css?ver=1584605997' type='text/css' media='all' />
-    <link rel='stylesheet' id='yusarch_fonts-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C600&#038;display=swap&#038;subset=cyrillic&#038;ver=5.3.14' type='text/css' media='all' />
+    <link rel='stylesheet' id='yusarch_fonts-css'  href='https://fonts.googleapis.com/css?family=Lobster|Roboto:700i' type='text/css' media='all' />
   </head>
   <body>
-    
+ <style>
+  .a {
+    z-index: 1;
+  }
+ </style>
   <div class="topnav" id="myTopnav">
     <a class="navbar-brand" class="active" href="{% url 'posts:index' %}">
       <img src="{% static 'img/logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -23,7 +27,7 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
-  
+
 
   <script>
   function myFunction() {
