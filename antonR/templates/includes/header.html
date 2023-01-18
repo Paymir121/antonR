@@ -13,11 +13,15 @@
   .a {
     z-index: 1;
   }
+
  </style>
+
+
   <div class="topnav" id="myTopnav">
-    <a class="navbar-brand" class="active" href="{% url 'posts:index' %}">
-      <img src="{% static 'img/logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-    </a>
+      <a>
+          <img src="{% static 'img/logo.svg' %}" width="70" height="70" alt="image description">
+      </a>
+
     <a href="{% url 'about:main' %}">Главная</a>
     <a href="{% url 'posts:index' %}" class="active">Проекты</a>
     <a href="{% url 'about:tech' %}">Документы</a>

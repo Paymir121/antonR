@@ -47,26 +47,57 @@ body {
     .topnav .icon {
     display: none;
     }
+    .topnav img {
+        float: left;
+        display: block;
+        width: 100px;
+        height: 30px;
+    }
     
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
+    .topnav {
+    position: fixed;
+    text-align: left;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 30px;
+    background-color: rgba(60, 179, 113, 0.9);
+    z-index: 11;
+    }
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
         float: left;
         display: block;
     }
+    .topnav img {
+        display: none;
     }
-    
+    }
+
     @media screen and (max-width: 800px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
+    .topnav.responsive {
+    background-color: rgba(60, 179, 113, 0.9);
+    position: fixed;
+    text-align: left;}
+    .topnav.responsive a.icon {
         position: absolute;
         right: 0;
         top: 0;
+
     }
     .topnav.responsive a {
         float: none;
         display: block;
         text-align: left;
+    }
+    .topnav.responsive img {
+        display: none;
+    }
+    .topnav.responsive a.icon {
+        float: left;
+        display: block;
     }
     }
 
@@ -102,7 +133,3 @@ body {
 
 .push li:hover:before{box-shadow: 0 0 0 10px rgba(0,0,0,.2)}
 .push li:last-child:after {content: none;}
-
-
-
-
