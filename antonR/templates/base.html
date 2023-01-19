@@ -20,10 +20,12 @@
   <body>
     {% include 'includes/header.html' %}
     <main>
-      <div class="container py-5" style=" margin: 40px;">
-        {% block content %}
-          Контент не подвезли :(
-        {% endblock %}
+      <div class="container py-5">
+        <div  style=" margin: 40px;">
+          {% block content %}
+            Контент не подвезли :(
+          {% endblock %}
+        </div>
       </div>
     </main>
     {% include 'includes/footer.html' %}

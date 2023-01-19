@@ -1,68 +1,47 @@
-
+{% extends "base_static.html" %}
 {% load static %}
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/fav/fav.ico" type="image">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/fav/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/fav/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/fav/favicon-16x16.png' %}">
-    <meta name="msapplication-TileColor" content="#000">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <body>
-    {% include 'includes/header.html' %}
-    <main>
-        <style>
-            #bg {
-                height: 100vh;
-                width: 100%;
-                position: relative;
-            }
-            
-            #bg img {
-                object-fit: cover;
-                height: 100%;
-                width: 100%;
-            }
-            .centered {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            }
-            h6 {
-                font-family: "Lobster", cursive;
-                font-size: 40px;
-                color: #ffffff;
-            }
-            h7 {
-                font-family: "Lobster", cursive;
-                font-size: 30px;
-                color: #ffffff;
-            }
-        </style>
-            <div id="bg">
+{% block content %}
+    <style>
+        #bg {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+        
+        #bg img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+        h6 {
+            font-family: "Lobster", cursive;
+            font-size: 40px;
+            color: #ffffff;
+        }
+        h7 {
+            font-family: "Lobster", cursive;
+            font-size: 30px;
+            color: #ffffff;
+        }
+    </style>
+    <div id="bg">
 
-                    <img src="{% static 'img/company1.jpg' %}" >
-
-
-                    <div class="centered">
-                        <img src="{% static 'img/logo.svg' %}" width="50" height="50" alt="image description">
-                        <h6>ООО "Абрис"</h6>
-                        <h7> Архитектурно-проектное бюро</h7>
-                    </div>
-
+            <img src="{% static 'img/company1.jpg' %}" >
+            <div class="centered">
+                <img src="{% static 'img/logo.svg' %}" width="50" height="50" alt="image description">
+                <h6>ООО "Абрис"</h6>
+                <h7> Архитектурно-проектное бюро</h7>
             </div>
-            <div class="container py-5">
-                {% include 'about/services.html' %}
-                {% include 'about/principles.html' %}
-            </div>
-    </main>
-    {% include 'includes/footer.html' %}
-  </body>
-</html>
+
+    </div>
+    <div class="container py-5">
+        {% include 'about/services.html' %}
+        {% include 'about/principles.html' %}
+    </div>
+{% endblock %}

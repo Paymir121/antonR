@@ -1,5 +1,76 @@
-{% extends "base.html" %}
-{% block title %}Технологии{% endblock %}
+{% extends "base_static.html" %}
+{% load static %}
+{% block title %}ООО "Абрис"{% endblock %}
 {% block content %}
-  Главная страница
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+  .centered {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    }
+    h6 {
+      font-family: "Lobster", cursive;
+      font-size: 40px;
+      color: #0a0a0a;
+  }
+    h7 {
+        font-family: "Lobster", cursive;
+        font-size: 30px;
+        color: #0a0a0a;
+    }
+</style>
+
+<div class="centered">
+  <img src="{% static 'img/logo.svg' %}" width="50%" height="50%" alt="image description">
+  <h6>ООО "Абрис"</h6>
+  <h7> Архитектурно-проектное бюро</h7>
+</div>
+
+<div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="{% static 'img/main3.jpg' %}" alt="Los Angeles" style="width:100%; height:100%;">
+      </div>
+
+      <div class="item">
+        <img src="{% static 'img/main2.jpg' %}" alt="Chicago" style="width:100%; height:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="{% static 'img/main1.jpg' %}" alt="New York" style="width:100%; height:100%;">
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+</body>
 {% endblock %}
