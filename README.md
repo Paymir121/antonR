@@ -9,15 +9,16 @@ Django 2.2.19
 
 
 - Установите и активируйте виртуальное окружение
-python -m venv venv
+python3 -m venv venv 
 source venv/Scripts/activate
+source venv/bin/activate
 pip install -r requirements.txt
 - Установите зависимости из файла requirements.txt
 ```
 - В папке с файлом manage.py выполните команду:
 source venv/Scripts/activate
 cd antonR
-python manage.py runserver
+python3 manage.py runserver
 http://127.0.0.1:8000/
 ```
 Установить миграции

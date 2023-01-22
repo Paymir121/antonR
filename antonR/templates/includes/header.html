@@ -18,11 +18,13 @@
 
 
   <div class="topnav" id="myTopnav">
-      <a>
+      <a href="{% url 'about:main' %}">
           <img src="{% static 'img/logo.svg' %}" width="70" height="70" alt="image description">
       </a>
 
-    <a href="{% url 'about:main' %}">Главная</a>
+    <a href="{% url 'about:main' %}">
+      Главная
+    </a>
     <a href="{% url 'posts:index' %}" class="active">Проекты</a>
     <a href="{% url 'about:tech' %}">Документы</a>
     <a href="{% url 'about:company' %}" >О компании</a>
