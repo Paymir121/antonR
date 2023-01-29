@@ -1,15 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}Технологии{% endblock %}
 {% block content %}
-  <div class="row">
-    <h1>Вот что я умею</h1>
+<style>
+  .main
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
 
-    <aside class="col-12 col-md-3">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          Тут должны быть Сертификаты
-        </li>
-      </ul>
-    </aside>
-  </div>
+.main__item
+{
+  background: rgb(193, 193, 193);
+  padding: 1px;
+  margin-right: 10px;
+}
+</style>
+<div class="row">
+  <h1>Документы и сертификаты</h1>
+
+  <aside class="col-12 col-md-3 col-xl-3">
+    <div id="main" class="main">
+
+      <div class="main__item">
+        <iframe src="{% static 'word/pdf1.pdf' %}"  width="300" height="300" style="border: 2px;">
+      </iframe></div>
+      <div class="main__item">
+        <iframe src="{% static 'word/pdf1.pdf' %}"  width="300" height="300" style="border: 2px;">
+      </iframe></div>
+
+    </div>
+  </aside>
+</div>
 {% endblock %}
