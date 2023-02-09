@@ -1,88 +1,42 @@
 {% extends "base_static.html" %}
 {% load static %}
+{% block title %}ООО "Абрис"{% endblock %}
 {% block content %}
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 <style>
-    #bg {
-        height: 100%;
-        width: 100%;
-        position: relative;
+  .centered {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    }
+
+#bg img {
+    height: 100%;
+    width: 100%;
     }
     
-    #bg img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-    }
-    .top {
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        }
-
-    img {
-        height: auto;
-        max-width: 100%;
-    }
-    .content{
-        margin-top: 5px;
-    }
-    .product {
-        border: 1px solid #c0c0c0;
-        height: 430px;
-        overflow: hidden;
-        padding: 2px 20px;
-        position: relative;
-        text-align: center;
-        transition: all 0.5s ease 0s;
-        margin-bottom: 20px;
-
-    }
-    .product:hover {
-        box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
-    }
-    .product-img {
-        height: 200px;
-        margin-bottom: 40px;
-    }
-    .product-title a {
-
-        color: #000;
-        font-weight: 500;
-        text-transform: uppercase;
-    }
-    .product-desc {
-
-        max-height: 60px;
-        overflow: auto;
-        margin-bottom: 50px;
-    }
-
-
-
-
 </style>
 <div id="bg">
-
     <img src="{% static 'img/company1.jpg' %}" >
-    <div class="top">
-
-        <img src="{% static 'img/logo.svg' %}">
-        <h1 style="font-size: 50px;">ООО "Абрис"</h1>
-        <h2 style="font-size: 30px;"> Архитектурно-проектное бюро</h2>
+    <div class="centered">
+        <img src="{% static 'img/logo.svg' %}" width="10%" height="10%" alt="image description">
+    <h1>ООО "Абрис"</h1>
+    <h2> Архитектурно-проектное бюро</h2>
     </div>
+</div>
 
-            
+<div class="container py-5">
+    {% include 'about/typeswork.html' %}
+    {% include 'about/services.html' %}
+    {% include 'about/principles.html' %}
+</div>
 
-    </div>
-</br>
-
-
-
-    <div class="container py-5">
-        {% include 'about/typeswork.html' %}
-        {% include 'about/services.html' %}
-        {% include 'about/principles.html' %}
-    </div>
+</body>
 {% endblock %}
-

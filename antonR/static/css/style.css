@@ -63,9 +63,13 @@ body {
     width: 100%;
     overflow: hidden;
     line-height: 30px;
-    background-color: rgba(60, 179, 113, 0.9);
+    background-color: rgba(91, 91, 91, 0.9);
     z-index: 11;
     }
+    .active {
+        background-color: #cfd1cf;
+        color: rgb(8, 7, 7);
+        }
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
         float: left;
@@ -78,7 +82,7 @@ body {
 
     @media screen and (max-width: 800px) {
     .topnav.responsive {
-    background-color: rgba(60, 179, 113, 0.9);
+    background-color: rgba(150, 158, 158, 0.9);
     position: fixed;
     text-align: left;}
     .topnav.responsive a.icon {
@@ -124,7 +128,7 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #6cc96f;
+  background: #777877;
   content: "";
   left: 0;
   transition: .3s ease-in-out;
